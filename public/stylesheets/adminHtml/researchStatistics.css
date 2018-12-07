@@ -1,0 +1,134 @@
+.main-container{
+	position: relative;
+	width: 1200px;
+	margin: 50px auto;
+	border: 1px solid #ccc;
+	border-bottom: none;
+	margin-bottom: 200px;
+}
+.row{
+	margin: 0;
+}
+.export{
+	position: absolute;
+	right: 30px;
+	top: 15px;
+}
+
+.modal-img{
+	width: 900px;
+	margin:100px auto;
+	text-align: center;
+}
+.modal-img img{
+	width: 100%;
+}
+
+.one-question{
+	width: 100%;
+	min-height: 200px;
+	border-bottom: 1px solid #ccc;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 30px;
+}
+.one-question .ques-title-box{
+	font-size: 16px;
+}
+.one-question .ques-title-box .ques-type{
+	color: #31B0D5;
+}
+.one-question .img-wrap{
+	position: relative;
+	overflow: hidden;
+	display: none;
+	cursor: pointer;
+}
+.one-question .img-wrap.title-img-box{
+	width: 400px;
+	max-height: 250px;
+	margin-top: 20px;
+}
+.one-question .img-wrap.option-img-box{
+	width: 200px;
+	max-height: 150px;
+	margin: 0px auto;
+}
+.one-question .img-wrap img{
+	width: 100%;
+	height: auto;
+}
+
+.one-question .hit-title{
+	background-color: #EEEEEE;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin: 20px 0 0 0;
+}
+.one-question .hit-title div{
+	padding: 0;
+	font-weight: 900;
+}
+.one-question .data-item{
+	padding: 20px 0 0 0;
+	line-height: 24px;
+}
+.one-question .data-item div{
+	position: relative;
+	padding: 0;
+}
+.one-question .data-item .option-text{
+	margin-bottom: 10px;
+	display: none;
+}
+.one-question .data-item .prcess-box{
+	width: 400px;
+	border: 1px solid #0099FF;
+	height: 22px;
+	position: relative;
+	margin-left: 10px;
+}
+.one-question .data-item .prcess-box .precess-show{
+	height: 20px;
+	width: 0px;
+	position: relative;
+	background-color: #0099FF;
+	transition: width 1s;
+	-webkit-transition: width 1s;
+}
+.one-question .data-item .precess-text{
+	position: absolute;
+	left: 415px;
+	top: 0;
+}
+.one-question .pie-Chart{
+	width: 1140px;
+	height: 400px;
+	margin-top: 30px;
+	display: none;
+}
+.one-question .get-more{
+	display: block;
+	color: #0099FF;
+	text-decoration: underline;
+	cursor: pointer;
+	margin: 20px 60px;
+	font-size: 18px;
+}
+.one-question .more-answers{
+	width: 1100px;
+	margin: 100px auto;
+	min-height: 700px;
+	background-color: #fff;
+}
+
+
+
+.yingcang{
+	display: none!important;
+}
+.border-left-fff{
+	border-left: 1px solid #fff;
+}

@@ -1,0 +1,235 @@
+/*
+ * 网站主导航 样式
+ */
+
+
+.main-nav-box{
+	width: 100%;
+	min-width: 1190px;
+	height: 38px;
+	position: relative;
+	background-color: white;
+	z-index: 4000;
+	font-family: "Microsoft Yahei";
+	border-bottom: 2px solid #333;
+}
+.main-nav{
+	width: 1190px;
+	height: 38px;
+	margin: 0 auto;
+}
+.main-nav{
+	width: 1190px;
+	height: 38px;
+	margin: 0 auto;
+}
+.index-nav{
+	width: 785px;
+	height: 38px;
+	margin-left: 190px;
+}
+.index-nav ul{
+	width: 785px;
+	position: relative;
+}
+.index-nav ul li{
+	display: inline-block;
+	height: 38px;
+	padding-left: 13px;
+	padding-right: 12px;
+	position: relative;
+}
+.index-nav ul li a{
+	color: #333;
+	font-size: 15px;
+	display: block;
+	line-height: 38px;
+	position: relative;
+}
+.index-nav ul li a:hover{
+	color: red;
+}
+.index-nav ul li a .icon{
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background: url(../imgs/npbg.png) no-repeat;
+	right: -18px;
+	top:3px;
+}
+.index-nav ul li a .new-icon{
+	background-position: -16px -205px;
+}
+.index-nav ul li a .hot-icon{
+	background-position: -0px -205px;
+}
+.left-nav{
+	position: absolute;
+	width: 190px;
+	top: 0px;
+}
+.all-type{
+	height: 38px;
+	width: 178px;
+	padding-left: 12px;
+	line-height: 38px;
+	background-color: #ffc001;
+}
+.all-type a{
+	color: #333 !important;
+	font-size: 14px;
+	font-weight: bold;
+}
+.all-type-box{
+	width: 190px;
+	position: relative;
+}
+.all-type-box ul{
+	width: 100%;
+	position: relative;
+	box-shadow: 0 1px 1px 1px #eee;
+	
+	padding: 2px 0px 0px 0px;
+}
+.all-type-box ul li{
+	width: 190px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 13px;
+}
+.all-type-box ul li .big-type{
+	width: 184px;
+	padding-left: 6px;
+	height: 35px;
+	background-color: #f4f4f4;
+	opacity: 0.97;
+}
+.all-type-box ul li .select{
+	background-color: #fa4b4b;
+	color: white!important;
+}
+.all-type-box ul li .big-type a{
+	float: left;
+	display: inline-block;
+	margin-left: 7px;
+	position: relative;
+	color: #333;
+}
+.all-type-box ul li .select a{
+	color: white;
+}
+.all-type-box ul li .big-type a:hover{
+	color: white;
+}
+.all-type-box ul li .big-type .iconfont{
+	color: white;
+	position: absolute;
+	right: 10px;
+	display: none;
+}
+.detail-type-panel{
+	position: absolute;
+	width: 956px;
+	min-height: 441px;
+	border: 2px solid #fa4b4b;
+	left: 190px;
+	top:2px;
+	background-color: white;
+	padding: 0px 10px 10px 30px;
+	font-size: 12px;
+	font-family:arial,tahoma;
+	display: none;
+}
+.detail-type-panel .left-menu{
+	width: 680px;
+	float: left;
+	min-height: 441px;
+}
+.detail-type-panel .left-menu .menu-one a{
+	background-color: #fa4c4c;
+	padding: 5px 10px;
+	border-radius: 12px;
+	color: white;
+	margin-right: 25px;
+}
+.detail-type-panel .left-menu .menu-two ul{
+	width: 100%;
+	background-color: white;
+	box-shadow: none;
+}
+.detail-type-panel .left-menu .menu-two li{
+	width: 100%;
+	height: auto;
+	padding:0;
+	font-size: 12px;
+}
+.detail-type-panel .left-menu .menu-two li .type-title{
+	width: 80px;
+	float: left;
+	color: #000000;
+	font-weight: bold;
+	line-height:23px;
+	padding: 8px 0px;
+}
+.detail-type-panel .left-menu .menu-two li .type-detail{
+	width: 560px;
+	float: left;
+	border-bottom: 1px solid #EEEEEE;
+	line-height:23px;
+	padding: 8px 0px;
+}
+.detail-type-panel .left-menu .menu-two li .type-detail a{
+	margin-right: 15px;
+	color: #333;
+	word-break: keep-all;
+	float: left;
+}
+.detail-type-panel .left-menu .menu-two li .type-detail a:hover{
+	color: #FF6600;
+}
+.detail-type-panel .left-menu .menu-two li .type-detail a.hot{
+	color: #FF6600;
+}
+.detail-type-panel .recommend-goods{
+	width: 256px;
+	float: right;
+}
+.detail-type-panel .recommend-goods .small-img-recommend{
+	margin-top: 10px;
+	float: left;
+}
+.detail-type-panel .recommend-goods .big-img-recommend{
+	margin-top: 15px;
+	float: left;
+}
+.detail-type-panel .recommend-goods .img-wrap{
+	float: left;
+	overflow: hidden;
+}
+.detail-type-panel .recommend-goods .img-one{
+	width: 123px;
+	height: 50px;
+	margin-left:5px;
+	margin-bottom: 5px;
+}
+.detail-type-panel .recommend-goods .img-two{
+	width: 251px;
+	height: 120px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+.detail-type-panel .recommend-goods .img-wrap img{
+	width: 100%;
+	float: left;
+}
+
+
+
+
+/**/
+.nav-bottom{
+	position: relative;
+	width: 100%;
+	height: 455px;
+	z-index: 3000;
+}

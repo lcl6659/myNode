@@ -1,0 +1,47 @@
+/*
+ * 左侧浮动页内导航
+ */
+.left-fixed-nav-box{
+	width: 100%;
+	position: fixed;
+	top: 290px;
+	display: none;
+}
+.left-fixed-nav-body{
+	width: 1190px;
+	position: relative;
+	margin: 0px auto;
+}
+.left-fixed-nav{
+	width: 68px;
+	position: absolute;
+	left: -80px;
+	border: 1px solid #EEEEEE;
+	background-color: #fafbfc;
+}
+.left-fixed-nav ul{
+	width: 100%;
+}
+.left-fixed-nav ul li{
+	width: 56px;
+	padding: 0px 6px;
+	text-align: center;
+	height: 32px;
+	line-height: 32px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.left-fixed-nav ul li:hover{
+	background-color: #ffaa00;
+	color: white;
+}
+.left-fixed-nav ul li span{
+	display: block;
+	width: 56px;
+	height: 32px;
+	border-bottom: 1px solid #EEEEEE;
+}
+.left-fixed-nav ul li.select{
+	background-color: #ffaa00;
+	color: white;
+}

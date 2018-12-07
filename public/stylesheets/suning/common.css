@@ -1,0 +1,30 @@
+body{
+	background-color: #FFF;
+	color: #333;
+}
+body, button, input, select, textarea{
+	font-size: 12px;
+	line-height: 1.5;
+	font-family: arial, tahoma, 宋体;
+}
+body,div,span, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, td, textarea, th, ul{
+	margin: 0px;
+	padding: 0px;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #666666;
+}
+a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.noBorder{
+	border: none!important;
+}
+.yingcang{
+	display: none!important;
+}

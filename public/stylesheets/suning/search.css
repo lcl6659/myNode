@@ -1,0 +1,303 @@
+/*
+ * 网站头部  包含logo、搜索框等
+ */
+
+.web-header{
+	position: relative;
+	z-index: 5000;
+	width: 100%;
+	min-width: 1190px;
+	height: 100px;
+}
+.header-body{
+	position: relative;
+	height: 100px;
+	width: 1190px;
+	margin: 0 auto;
+}
+.logo-box{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 4000;
+}
+.logo-box a{
+	display: block;
+	float: left;
+	height: 100%;
+}
+.logo-box a.webLogo{
+	height: 90px;
+}
+.logo-box a img{
+	height: 100%;
+}
+.search-box{
+	position: absolute;
+    height: 100px;
+    width: 600px;
+    top: 0;
+    left: 370px;
+    z-index: 5000;
+}
+.search-box .n-sreach{
+	width: 100%;
+	margin-top: 28px;
+	position: relative;
+}
+.search-box .n-sreach .search-icon{
+	display: block;
+	width: 34px;
+	height: 38px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 38px;
+	color: #ccc;
+}
+.search-box .n-sreach .serach-form{
+	width: 500px;
+	border: 2px solid #ffc001;
+	padding-left: 34px;
+}
+.search-box .n-sreach .serach-form input{
+	width: 466px;
+	height:18px;
+	border: none;
+	line-height: 18px;
+	font-size:14px;
+	padding: 8px 0px;
+}
+.search-box .n-sreach .serach-form input:focus{
+	outline: none;
+}
+.search-box .n-sreach .search-btn{
+	width: 100px;
+	height: 38px;
+	background-color: #ffc001;
+	text-align: center;
+	line-height: 38px;
+	font-size: 16px;
+	letter-spacing: 7px;
+	color: #333;
+	cursor: pointer;
+	position: absolute;
+	top: 0px;
+	left: 500px;
+}
+.search-box .n-sreach .hot-searchWord{
+	width: 100%;
+	height: 18px;
+	margin-top: 5px;
+}
+.search-box .n-sreach .hot-searchWord a{
+	color: #999;
+	margin-right: 10px;
+}
+.search-box .n-sreach .hot-searchWord a.hotWord{
+	color: red;
+}
+
+
+/*历史搜索关键词*/
+.search-box .history-searchWord{
+	position: absolute;
+	width: 498px;
+	top: 66px;
+	left: 0px;
+	border:1px solid #e4e4e4;
+	background-color: white;
+	display: none;
+}
+.search-history{
+	width: 259px;
+	min-height: 100px;
+	float: left;
+	padding: 10px 0px;
+}
+.title-tool{
+	width: 100%;
+}
+.title-tool .title{
+	display: inline-block;
+	float: left;
+	color: #999;
+	margin-left: 10px;
+}
+.title-tool .tool{
+	color: #999;
+	float: right;
+	margin-right: 10px;
+}
+.title-tool .tool a{
+	color: #999;
+	cursor: pointer;
+}
+.title-tool .tool .iconfont{
+	font-size: 13px;
+	cursor: pointer;
+}
+.search-list{
+	clear: both;
+	padding-top: 5px;
+}
+.history-list{
+	width: 100%;
+}
+.history-list ul{
+	width: 100%;
+}
+.history-list ul li{
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+}
+.history-list ul li:hover{
+	background-color:#efefef;
+}
+.history-list ul li div{
+	width: 100%;
+}
+.history-list ul li div a{
+	display: block;
+	float: left;
+	color: #2272c8;
+	cursor: pointer;
+	margin-left: 10px;
+}
+.history-list ul li div .delete-icon2{
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+	cursor: pointer;
+	display: none;
+}
+.hotWord-now{
+	width: 238px;
+	float: left;
+	padding: 10px 0px;
+	border-left: 1px solid #efefef;
+}
+.hotWord-list{
+	width: 100%;
+	float: left;
+	padding-top: 5px;
+}
+.hotWord-list ul{
+	width: 100%;
+}
+.hotWord-list ul li{
+	float: left;
+	height: 26px;
+	line-height: 26px;
+	margin: 0 0 15px 15px;
+}
+.hotWord-list ul li a{
+	border: 1px solid #e1e1e1;
+	display: block;
+	height: 100%;
+	text-align: center;
+	padding: 0px 5px;
+	cursor: pointer;
+}
+.hotWord-list ul li a:hover{
+	border: 1px solid #F60;
+	text-decoration: none;
+}
+
+/*搜索匹配关键词*/
+.search-box .match-searchWord{
+	position: absolute;
+	width: 498px;
+	min-height: 100px;
+	top: 66px;
+	left: 0px;
+	background-color: white;
+	border: 1px solid #e4e4e4;
+	display: none;
+}
+.search-box .hide-serach-panel{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	color: #333;
+	display: block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+}
+.search-box .hide-serach-panel:hover{
+	color: #f60;
+}
+.match-searchWord ul{
+	width: 100%;
+}
+.match-searchWord li{
+	width: 478;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 25px;
+	line-height: 25px;
+}
+.match-searchWord li:hover{
+	background-color: #efefef;
+}
+.match-searchWord .match-type{
+	border-bottom: 1px solid #efefef;
+}
+.match-searchWord .match-type .type{
+	margin-left: 10px;
+}
+.match-searchWord .match-type .type .type-name{
+	color: #F60;
+	font-weight: bold;
+}
+.match-searchWord .match-search-history .history-word{
+	color: #2272c8;
+	float: left;
+	display: block;
+}
+.match-searchWord .match-search-history .history-text{
+	float: right;
+	color: #BBB;
+	margin-right: 30px;
+}
+.match-searchWord .match-search-history .history-del{
+	float: right;
+	color: #BBB;
+	font-size: 14px;
+	cursor: pointer;
+	width: 25px;
+	text-align: center;
+	margin-right: 30px;
+	display: none;
+}
+.match-searchWord .search-match-word span{
+	font-weight: bold;
+	color: #666;
+}
+.match-searchWord .search-match-word span b{
+	font-weight: normal;
+}
+.match-searchWord .search-match-word .shop span{
+	font-weight: normal;
+}
+
+.match-searchWord .search-match-word .shop .shop-icon{
+	display: inline-block;
+	position: relative;
+	top:3px;
+	background: url(../../imgs/npbg.png) -240px -33px no-repeat;
+	width: 16px;
+	height: 16px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+.match-searchWord .search-match-word .shop .shop-text{
+	font-weight: bold;
+}

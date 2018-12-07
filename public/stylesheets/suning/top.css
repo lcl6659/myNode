@@ -1,0 +1,359 @@
+/*
+ * 这是网站公共顶部的样式
+ */
+
+/*顶部活动*/
+.top-event{
+	width: 100%;
+	min-width: 1190px;
+	position: relative;
+	z-index: 9999;
+}
+.event-wrap{
+	width: 100%;
+	padding: 0px;
+	min-height: 100px;
+}
+.event-wrap .event-img{
+	display: block;
+	width: 1190px;
+	margin: 0 auto;
+}
+.hide-top-event{
+	position: absolute;
+	top:3px;
+	right: 56px;
+	width: 15px;
+	height: 15px;
+	background: url('../../imgs/indexNew-bg.png') no-repeat -106px -145px;
+	cursor: pointer;
+}
+.show-top-event{
+	position: absolute;
+	top:3px;
+	right: 56px;
+	width: 15px;
+	height: 15px;
+	background: url('../../imgs/indexNew-bg.png') no-repeat -106px -160px;
+	cursor: pointer;
+	display: none;
+}
+
+
+
+/*顶部导航*/
+.top-nav{
+	width: 100%;
+	height: 35px;
+	background-color: #f5f5f5;
+	position: relative;
+	z-index: 6000;
+}
+.top-nav a{
+	color: #666666;
+	text-decoration: none;
+}
+.top-nav a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.nav-body{
+	width: 1190px;
+	margin: 0 auto;
+}
+.left-nav{
+	float: left;
+	display: block;
+}
+.right-nav{
+	float: right;
+}
+.one-top-nav-body{
+	position: relative;
+	float: left;
+}
+.one-top-nav{
+	display: block;
+	float: left;
+	padding: 0px 10px;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+	height: 35px;
+	border: 1px solid #f5f5f5;
+	border-bottom: none;
+	border-top: none;
+}
+.one-top-nav .icon{
+	display: inline-block;
+	float: left;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position-y: center;
+}
+.one-top-nav i.iconfont{
+	font-size: 14px;
+}
+.one-top-nav .shoppingCar{
+	background-image: url('../../imgs/shppingcar.png');
+	width: 15px;
+	height: 33px;
+	margin-right: 7px;
+}
+.one-top-nav .mobile{
+	width: 17px;
+	height: 33px;
+	margin-right: 2px;
+	background-image: url('../../imgs/mobile.png');
+}
+.one-top-nav .one-nav-name{
+	display: inline-block;
+	position: relative;
+	top: 0px;
+	height: 35px;
+	line-height: 35px;
+	color: #666;
+}
+.shoppingCarName{
+	font-weight: 900;
+}
+.one-top-nav .one-nav-name:hover{
+	color: red;
+	text-decoration: underline;
+}
+.one-top-nav .shappingCount{
+	position: relative;
+	display: inline-block;
+	height: 16px;
+	min-width: 8px;
+	color: white;
+	font-weight: bold;
+	border-radius: 8px;
+	text-align: center;
+	line-height: 16px;
+	background-color: #f7a705;
+	padding: 0 4px;
+	font-size: 12px;
+	top:-8px;
+	right: 3px;
+}
+.one-top-nav .down{
+	display: inline-block;
+	margin-left: 3px;
+	width: 10px;
+	height: 35px;
+	background: url('../../imgs/down.png') no-repeat;
+	background-size: 100%;
+	background-position-y: center;
+	vertical-align: middle;
+	-webkit-transform-origin: 50% 50%;
+	transform-origin:50% 50%;
+	-webkit-transition: transform 0.2s ease-in;
+	transition: transform 0.2s ease-in;
+	
+}
+.one-top-nav-select{
+	background-color: white;
+	border: 1px solid #ddd;
+	border-bottom: none;
+	border-top: none;
+	height: 36px;
+	z-index: 4000;
+}
+.one-top-nav .changeUp{
+	-webkit-transform:rotate(180deg);
+	transform: rotate(180deg);
+}
+.down-panel{
+	position: absolute;
+	top: 35px;
+	left: 0px;
+	border: 1px solid #ddd ;
+	z-index: 3000;
+	display: none;
+	background-color: white;
+}
+.address-panel{
+	padding: 20px 0px;
+	width: 998px;
+	min-height: 100px;
+}
+.address-panel .one-type-address{
+	width: 176px;
+	float: left;
+	min-height: 100px;
+	border-right: 1px solid #eee;
+	padding-left: 20px;
+}
+.address-panel .one-type-address .address-title{
+	font-size: 14px;
+	display: block;
+	height: 25px;
+	line-height: 17px;
+	color: #333333;
+}
+.address-panel .one-type-address .address-children{
+	width: 100%;
+}
+.address-panel .address-children p{
+	width: 78px;
+	padding: 0px;
+	margin: 0px;
+	border: none;
+	float: left;
+	height: 25px;
+	line-height: 25px;
+	position: relative;
+}
+
+.address-panel .address-children p a.hot{
+	position: relative;
+}
+.address-panel .address-children p a.hot:after{
+	content: "";
+	display: block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top:-5px;
+	right: -18px;
+	background: url(../../imgs/npbg.png) no-repeat;
+	background-position:0 -205px;
+}
+
+.business-panel{
+	width: 162px;
+	padding: 5px 0px;
+	min-height: 50px;
+}
+.business-panel a{
+	display: block;
+	float: left;
+	width: 71px;
+	padding-left: 10px;
+	height: 28px;
+	line-height: 28px;
+}
+.account-panel{
+	width: 100px;
+	min-height: 50px;
+	padding: 5px 0px;
+}
+.account-panel a{
+	width: 100%;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+}
+.order-panel{
+	width: 84px;
+	min-height: 50px;
+	padding: 5px 0px;
+}
+.order-panel a{
+	width: 100%;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+}
+.yigou-panel{
+	width: 162px;
+	min-height: 50px;
+	padding: 5px 0px;
+}
+.yigou-panel .my-msg{
+	width: 142px;
+	height: 54px;
+	padding: 0px 10px;
+}
+.yigou-panel .my-msg .user-head{
+	display: block;
+	width: 54px;
+	height: 54px;
+	float: left;
+}
+.yigou-panel .my-msg .user-head img{
+	width: 100%;
+	height: 100%;
+}
+.yigou-panel .my-msg .user-name-tab{
+	width: 86px;
+	height: 54px;
+	float: left;
+}
+.yigou-panel .my-msg .user-name-tab a{
+	width: 64px;
+	display: block;
+	height: 27px;
+	line-height: 27px;
+	margin-left: 20px;
+}
+.yigou-panel .my-msg .user-name-tab a.clock{
+	background-color: #F60;
+	height: 22px;
+	line-height: 22px;
+	border-radius: 4px;
+	color: white;
+	text-align: center;
+}
+.yigou-panel .my-tools{
+	width: 162px;
+	margin-top: 5px;
+}
+.yigou-panel .my-tools a{
+	display: block;
+	float: left;
+	width: 71px;
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+}
+.yigou-panel .my-tools a .iconfont{
+	color: #ffd200;
+	font-size: 16px;
+	margin-left: 3px;
+	
+}
+.mobile-panel{
+	width: 222px;
+	min-height: 50px;
+	padding: 10px 0px;
+}
+.mobile-panel .one-app{
+	width: 74px;
+	padding: 0px 18px;
+	float: left;
+}
+.mobile-panel .one-app .erweima{
+	width: 100%;
+}
+.mobile-panel .one-app .erweima img{
+	width: 100%;
+	height: auto;
+}
+.mobile-panel .one-app .app-name{
+	width: 100%;
+	text-align: center;
+}
+.service-panel{
+	width: 162px;
+	min-height: 50px;
+	right: 0px;
+	left: auto;
+	padding: 5px 0px;
+}
+.service-panel a{
+	display: block;
+	float: left;
+	width: 70px;
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+}
+.service-panel a .iconfont{
+	color: #ffd200;
+	font-size: 16px;
+	margin-left: 3px;
+}

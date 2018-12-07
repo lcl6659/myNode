@@ -1,0 +1,106 @@
+/*主要banner*/
+.main-banner-box{
+	position: relative;
+	width: 100%;
+	height: 455px;
+	background-color: cornflowerblue;
+	z-index: 4000;
+}
+.banners{
+	width: 100%;
+	min-width: 770px;
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	z-index: 3000;
+}
+.one-banner{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: none;
+}
+.one-banner .banner-img-box{
+	width: 1190px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+.one-banner .banner-img-box a{
+	display: block;
+	width: 770px;
+	height: 100%;
+	margin-left: 190px;
+}
+.one-banner .banner-img-box a img{
+	width: 100%;
+}
+
+
+
+.banner-number-box{
+	width: 100%;
+	height: 20px;
+	position: absolute;
+	top: 425px;
+	z-index: 4000;
+	text-align: center;
+}
+.banner-number-box .numbers{
+	height: 20px;
+	display: inline-block;
+}
+.banner-number-box .numbers .banner-count{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	color: white;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #333;
+	cursor: pointer;
+	margin-left: 8px;
+}
+.banner-number-box .numbers .banner-show{
+	background-color: #ff6000;
+}
+	
+
+
+.main-banner-arrow-box{
+	width: 100%;
+	position: absolute;
+	z-index: 4000;
+	display: none;
+}
+
+.main-banner-arrow-box .banner-arrow{
+	width: 1190px;
+	margin: 0px auto;
+	position: relative;
+}
+.main-banner-arrow-box .banner-arrow .banner-arrow-icon{
+	background: url('../../imgs/indexNew-bg.png') no-repeat;
+	width: 38px;
+	height: 78px;
+	position: absolute;
+	top:-260px;
+	cursor: pointer;
+	opacity: 0.6;
+}
+.main-banner-arrow-box .banner-arrow .banner-left-arrow{
+	background-position: 0 -51px;
+	float: left;
+	margin-left: 200px;
+}
+.main-banner-arrow-box .banner-arrow .banner-right-arrow{
+	background-position: -43px -51px;
+	float: left;
+	margin-left:912px;
+}
+.main-banner-arrow-box .banner-arrow .banner-arrow-icon:hover{
+	opacity: 1;
+}

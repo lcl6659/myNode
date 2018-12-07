@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>点击复选框生成表单</title>
+		<script src="/js/public/jquery-1.12.4.js"></script>
+		<style type="text/css">
+			div,
+			span,
+			ul,
+			li,
+			a,
+			textarea {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.contaner {
+				width: 1000px;
+				min-height: 800px;
+				position: relative;
+				margin: auto;
+			}
+			
+			.check-box li {
+				display: inline-block;
+				line-height: 50px;
+				width: 90px;
+			}
+			
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			
+			table tr {
+				line-height: 50px;
+			}
+			
+			table tr td {
+				text-align: center;
+			}
+			
+			.firstTr {
+				border-bottom: 1px solid #999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="contaner">
+			<div class="check-box" id="goodsSpecMainDiv">
+				<ul class="commodity-size">
+					<li>顏色：</li>
+					<li><input type="checkbox" level="0" data-value="紅色" /> 紅色</li>
+					<li><input type="checkbox" level="0" data-value="黑色" /> 黑色</li>
+					<li><input type="checkbox" level="0" data-value="蓝色" /> 蓝色</li>
+					<li><input type="checkbox" level="0" data-value="紫色" /> 紫色</li>
+					<li><input type="checkbox" level="0" data-value="玫红色" /> 玫红色</li>
+				</ul>
+				<ul class="commodity-size">
+					<li>尺码：</li>
+					<li><input type="checkbox" level="1" data-value="XXS" /> XXS</li>
+					<li><input type="checkbox" level="1" data-value="XS" /> XS</li>
+					<li><input type="checkbox" level="1" data-value="S" /> S</li>
+					<li><input type="checkbox" level="1" data-value="M" /> M</li>
+					<li><input type="checkbox" level="1" data-value="L" /> L</li>
+					<li><input type="checkbox" level="1" data-value="XL" /> XL</li>
+					<li><input type="checkbox" level="1" data-value="2XL" /> 2XL</li>
+					<li><input type="checkbox" level="1" data-value="3XL" /> 3XL</li>
+				</ul>
+				<ul class="commodity-size">
+					<li>年份：</li>
+					<li><input type="checkbox" level="2" data-value="2016" /> 2016</li>
+					<li><input type="checkbox" level="2" data-value="2015" /> 2015</li>
+					<li><input type="checkbox" level="2" data-value="2014" /> 2014</li>
+					<li><input type="checkbox" level="2" data-value="2013" /> 2013</li>
+					<li><input type="checkbox" level="2" data-value="2012" /> 2012</li>
+					<li><input type="checkbox" level="2" data-value="2011" /> 2011</li>
+					<li><input type="checkbox" level="2" data-value="2010" /> 2010</li>
+				</ul>
+				<ul class="commodity-size">
+					<li>材料：</li>
+					<li><input type="checkbox" level="3" data-value="羊毛" /> 羊毛</li>
+					<li><input type="checkbox" level="3" data-value="塑料" /> 塑料</li>
+				</ul>
+			</div>
+			<table id="specTable">
+				<tr class="firstTr">
+					<th>颜色</th>
+					<th>尺码</th>
+					<th>年份</th>
+					<th>材料</th>
+					<th>价格（元）</th>
+					<th>编码</th>
+					<th>条形码</th>
+				</tr>
+			</table>
+		</div>
+		<table id="tplclone" style="display: none;">
+			<!--内容由creatTrTpl()生成-->
+		</table>
+
+		<script type="text/javascript">
+			var checkNeedData = {
+				level: 0 //级数
+			}
+
+			$(function() {
+				creatTrTpl(); //生成tr模板,每次结构改变，都要运行一次
+
+				$("#goodsSpecMainDiv").on("click", "input[type=checkbox]", function() {
+					var thisLevel = parseInt($(this).attr("level"));
+					var thisValue = $(this).attr("data-value");
+					var checked = $(this).is(':checked');
+					var thisLevelCheckCount = getThisLevelCheckCount($(this));
+					var p = {
+						level: thisLevel,
+						value: thisValue,
+						checked: checked,
+						thisLevelCheckCount: thisLevelCheckCount
+					}
+					updateTableTrs(p);
+				});
+			});
+
+			/*
+			 * 创建tr
+			 * data = {
+			 * 	level:"选择的等级",
+			 * 	value:"选择的值",
+			 * 	checked:true/false,
+			 * 	thisLevelCheckCount:次等级选择的个数
+			 * }
+			 */
+			function updateTableTrs(data) {
+
+				if(data.checked) {
+					//选中
+					if(data.thisLevelCheckCount==1 && $("#specTable").find("tr").length>1){
+						$("#specTable").find(".level-"+data.level).text(data.value).attr("level-value",data.level+"-"+data.value);;
+					}else{
+						var updateNeedData = getAddArr(data.level,data.value)[0];
+						updateNeedData.forEach(function(oneDataArr,index){
+							var $_trClone = $("#tplclone").find("tr").clone();
+							if(oneDataArr instanceof Array){
+								oneDataArr.forEach(function(oneData,index){
+									var levelClass ="level-"+oneData.level;
+									$_trClone.find("."+levelClass).text(oneData.value).attr("level-value",oneData.level+"-"+oneData.value);
+								});
+							}else{
+								var levelClass ="level-"+oneDataArr.level;
+								$_trClone.find("."+levelClass).text(oneDataArr.value).attr("level-value",oneDataArr.level+"-"+oneDataArr.value);
+							}
+							
+							$("#specTable").append($_trClone);
+						});
+					}
+				} else {
+					//取消选中
+					
+					if($("#goodsSpecMainDiv").find("input:checked").length==0){
+						$("#specTable").find(".add-tr-data").remove();
+					}else{
+						var levelValue = data.level+"-"+data.value;
+						var $_cancelTd = $("#specTable").find("td[level-value='"+levelValue+"']");
+						if(data.thisLevelCheckCount==0){
+							$_cancelTd.each(function(index,td){
+								$(td).text("");
+							});
+						}else{
+							$_cancelTd.each(function(index,td){
+								$(td).parents("tr").remove();
+							});
+						}
+					}
+				}
+			}
+			
+			
+			function getAddArr(clickLevel,clickValue){
+				var xObj = {};
+				for(var i = 0; i < checkNeedData.level; i++) {
+					var $_thisLevelChecked = $("#goodsSpecMainDiv").find(".commodity-size").eq(i).find("input:checked");
+					if($_thisLevelChecked.length > 0) {
+						xObj[i] = [];
+						if(clickLevel==i){
+							xObj[i].push({
+								value:clickValue,
+								level:i
+							});
+						}else{
+							$_thisLevelChecked.each(function(index, checkbox) {
+								var thisValue = $(checkbox).attr("data-value");
+								xObj[i].push({
+									value:thisValue,
+									level:i
+								});
+							});
+						}
+						
+					}
+				}
+				var arr =[];
+				for(var key in xObj) { //对json循环遍历
+					arr.push(xObj[key]);
+				}
+				return doExchange(arr);
+			}
+			
+
+			function doExchange(arr) {
+				var len = arr.length;
+				// 当数组大于等于2个的时候
+				if(len >= 2) {
+					// 第一个数组的长度
+					var len1 = arr[0].length;
+					// 第二个数组的长度
+					var len2 = arr[1].length;
+					// 2个数组产生的组合数
+					var lenBoth = len1 * len2;
+					//  申明一个新数组
+					var items = new Array(lenBoth);
+					// 申明新数组的索引
+					var index = 0;
+					for(var i = 0; i < len1; i++) {
+						for(var j = 0; j < len2; j++) {
+							if(arr[0][i] instanceof Array) {
+								items[index] = arr[0][i].concat(arr[1][j]);
+							} else {
+								items[index] = [arr[0][i]].concat(arr[1][j]);
+							}
+							index++;
+						}
+					}
+					var newArr = new Array(len - 1);
+					for(var i = 2; i < arr.length; i++) {
+						newArr[i - 1] = arr[i];
+					}
+					newArr[0] = items;
+					return doExchange(newArr);
+				} else {
+					return arr;
+				}
+			}
+
+			/*
+			 * 这组中，是不是第一次选择
+			 * $_checkbox的jquery对象
+			 */
+			function getThisLevelCheckCount($_checkbox) {
+				var $_p = $_checkbox.parents(".commodity-size");
+				var checkLength = $_p.find("input:checked").length;
+				return checkLength;
+			}
+			
+
+			//生成tr模板
+			function creatTrTpl() {
+				var $_tr = $('<tr class="add-tr-data"></tr>');
+				var thCount = $("#specTable").find("th").length;
+				checkNeedData.level = thCount - 3;
+				for(var i = 0; i < thCount - 3; i++) {
+					var $_td = $("<td></td>");
+					$_td.addClass("level-"+i);
+					$_tr.append($_td);
+				}
+				var $_inputTd = $('<td><input type="text" class="jiage"/></td><td><input type="text" class="bianma"/></td><td><input type="text" class="tiaoxingma"/></td>');
+				$_tr.append($_inputTd);
+				$("#tplclone").empty();
+				$("#tplclone").append($_tr);
+			}
+		</script>
+	</body>
+
+</html>

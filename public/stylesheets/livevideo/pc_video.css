@@ -1,0 +1,363 @@
+*{
+	margin: 0;padding: 0;
+}
+body{
+	background-color: #000000;
+}
+#back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	z-index: 1;
+}
+.video_container{
+	width: 100%;
+	max-width: 1100px;
+	height: 690px;
+	transition: height 1s;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top:0px;
+	z-index: 2;
+}
+.video_body{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 620;
+	background-color: #2288CC;
+	overflow: hidden;
+}
+#myVideo{
+	width: 100%;
+	height: 620;
+	background-color: rgb(0, 0, 0);
+	z-index: 5;
+}
+
+/*覆盖层，盖住视频区域*/
+#cover{
+	width: 100%;
+	height: 620px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 8;
+}
+
+/*弹幕内容*/
+#barrageContent{
+	position: absolute;
+	left: 0px;
+	top: 20px;
+	z-index: 10;
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+	
+}
+#barrageContent .oneBarrage{
+	position: absolute;
+	left: 100%;
+	height:50px;
+	line-height: 50px;
+	color: white;
+	text-shadow: 1px 1px 1px black;
+	overflow: hidden;
+	animation: barrageOpen 15s linear;
+	animation-play-state: paused;
+	font-size: 18px;
+}
+#barrageContent .top{
+	top:0px;
+	animation-delay: 0s;
+	animation-play-state: running;
+}
+#barrageContent .middle{
+	top:50px;
+	animation-delay: 1s;
+	animation-play-state: running;
+}
+#barrageContent .bottom{
+	top:100px;
+	animation-delay: 2s;
+	animation-play-state: running;
+}
+.stopAnimation{
+	animation-play-state: paused;
+}
+.startAnimation{
+	animation-delay: 0s;
+	animation-play-state: running;
+}
+@keyframes barrageOpen{
+	0%{
+		left: 100%;
+	}
+	100%{
+		left: -200%;
+		display: none;
+	}
+}
+
+/*收到礼物  多个礼物展示区域*/
+#getMoreGifts{
+	position: absolute;
+	left: 0px;
+	bottom: 230px;
+	z-index: 20;
+	width: 250px;
+	height: 150px;
+	/*background-color: RGBA(204,204,255,0.7);*/
+	overflow: hidden;
+}
+
+#getMoreGifts .oneTypeGifts{
+	position: absolute;
+	left: -100%;
+	height:40px;
+	line-height: 40px;
+	color: white;
+	text-shadow: 1px 1px 1px black;
+	background-color: rgba(153,204,255,0.7);
+	border-radius:0px 10px 10px 0px;
+	padding: 0px 5px;
+	overflow: hidden;
+	animation: moreGiftsOpen 6s ease-out;
+	animation-play-state: paused;
+	font-size: 15px;
+}
+#getMoreGifts .oneTypeGifts .giftcount{
+	font-size: 23px;
+	color: #99FF66;
+	font-weight: 900;
+}
+#getMoreGifts .topGift{
+	top:0px;
+	animation-delay: 0s;
+	animation-play-state: running;
+}
+#getMoreGifts .middleGift{
+	top:50px;
+	animation-delay: 2s;
+	animation-play-state: running;
+}
+#getMoreGifts .bottomGift{
+	top:100px;
+	animation-delay: 4s;
+	animation-play-state: running;
+}
+.stopAnimation{
+	animation-play-state: paused;
+}
+.startAnimation{
+	animation-delay: 0s;
+	animation-play-state: running;
+}
+@keyframes moreGiftsOpen{
+	0%{
+		left: -100%;
+	}
+	40%{
+		left: 0%;
+	}
+	80%{
+		left: 0%;
+	}
+	100%{
+		left: -100%;
+	}
+}
+
+
+/*收到一个礼物展示区域*/
+#getGifts{
+	position: absolute;
+	left: 0px;
+	bottom: 60px;
+	z-index: 10;
+	width: 450px;
+	height: 150px;
+	/*background-color: RGBA(204,204,255,0.7);*/
+	overflow: hidden;
+}
+
+#getGifts .giftsWrap{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 470px;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background-color: rgba(0,0,0,0);
+}
+#getGifts .gifts{
+	position: absolute;
+	top: 150px;
+	left: 0px;
+	width: 450px;
+	color: white;
+	text-shadow:1px 1px 1px #444444;
+	padding-left: 10px;
+}
+#getGifts .gifts div{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+
+/*工具区*/
+#tools{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	z-index: 10;
+	width: 100%;
+	height: 60px;
+	overflow: hidden;
+}
+#tools #showSengMsg{
+	width: 500px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	float: left;
+	margin: 0px 5px;
+}
+#tools #sendGift{
+	float: right;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	background-color: rgba(180,200,100,0.8);
+	border-radius: 50%;
+	border:1px solid #f0f0dc;
+	margin: 0px 5px;
+	cursor: pointer;
+}
+#tools #exit{
+	float: right;
+}
+
+
+/*发送消息区域*/
+#sendMsg{
+	width: 100%;
+	height: 60px;
+	z-index: 10;
+	line-height: 60px;
+	box-sizing: border-box;
+	padding-top: 10px;
+}
+#sendMsg button{
+	width: 15%;
+	height: 40px;
+	float: left;
+	border-top:1px solid #5BC0DE;
+	border-bottom:1px solid #5BC0DE;
+	cursor: pointer;
+}
+#sendMsg button:focus{
+	outline: none;
+}
+#sendMsg #barrageOpen{
+	border-right: none;
+	border-left: 1px solid #5BC0DE;
+}
+#sendMsg #barrageClose{
+	border-right: none;
+	border-left: 1px solid #5BC0DE;
+	display: none;
+}
+#sendMsg #sendBarrage{
+	border-right: 1px solid #5BC0DE;
+}
+#sendMsg input{
+	box-sizing: border-box;
+	float: left;
+	width: 60%;
+	height: 40px;
+	margin: 0px;
+	border-left: none;
+	border-right: none;
+	padding-left: 10px;
+	border-top:1px solid #5BC0DE;
+	border-bottom:1px solid #5BC0DE;
+	font-size: 15px;
+}
+#sendMsg input:focus{
+	outline: none;
+}
+
+
+
+/*送礼物容器*/
+#sendGiftContainer{
+	width: 400px;
+	height: 260px;
+	background-color: rgba(0,0,0,0.7);
+	position: absolute;
+	z-index: 30;
+	bottom: 0px;
+	right: 0px;
+	box-sizing: border-box;
+	display: block;
+}
+#sendGiftContainer #giftsContent{
+	width: 100%;
+	height: 200px;
+}
+#sendGiftContainer #giftsContent .swiper-container {
+    width: 100%;
+    height: 200px;
+}
+#sendGiftContainer #giftsContent .swiper-container .swiper-pagination{
+    bottom: 5px;
+}
+#sendGiftContainer #giftsContent .swiper-container .swiper-pagination span{
+    border:1px solid white;
+}
+#sendGiftContainer #giftsContent .swiper-container .swiper-slide{
+	color: #CCCCCC;
+}  
+#sendGiftContainer #giftsContent .swiper-container .swiper-slide .oneGift{
+	width: 25%;
+	height: 86px;
+	float: left;
+	text-align: center;
+	line-height: 86px;
+	cursor: pointer;
+}
+#sendGiftContainer #giftsContent .swiper-container .swiper-slide .wantSend{
+	font-size:20px;
+	color: white;
+}  
+#sendGiftContainer #actionContent{
+	width: 100%;
+	height: 60px;
+}
+#sendGiftContainer #actionContent .giftGo{
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 15px;
+	float: right;
+	background-color: rgba(102,204,255,0.4);
+	color: white;
+	cursor: pointer;
+}
+#sendGiftContainer #actionContent .giftcannotGo{
+	background-color: rgba(153,153,153,0.8);
+}
+
+

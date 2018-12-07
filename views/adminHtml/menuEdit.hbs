@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>app首页菜单编辑排序</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/public/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/public/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/adminHtml/menuEdit.css" />
+	</head>
+
+	<body>
+		<div class="menu-container">
+			<ul class="menu-box" id="menuBox">
+				<li menu-type="course">
+					<div class="img-wrap">
+						<img src="/imgs/adminHtml/course.png" />
+						<div class="upload-img-box">
+							<a href="javascript:;" class="file">
+								<input type="file" class="fileClip" id="file-01" accept="image/png,image/jpeg,image/jpg" />
+							</a>
+						</div>
+					</div>
+					<div class="nav-text">
+						<span nav-text="课程中心"></span>
+						<input type="text" value="课程中心" maxlength="4" />
+					</div>
+				</li>
+				<li menu-type="daturm">
+					<div class="img-wrap">
+						<img src="/imgs/adminHtml/data.png" />
+						<div class="upload-img-box">
+							<a href="javascript:;" class="file">
+								<input type="file" class="fileClip" id="file-02" accept="image/png,image/jpeg,image/jpg" />
+							</a>
+						</div>
+					</div>
+					<div class="nav-text">
+						<span nav-text="资料中心"></span>
+						<input type="text" value="资料中心" maxlength="4" />
+					</div>
+				</li>
+				<li menu-type="exam">
+					<div class="img-wrap">
+						<img src="/imgs/adminHtml/test.png" />
+						<div class="upload-img-box">
+							<a href="javascript:;" class="file">
+								<input type="file" class="fileClip" id="file-03" accept="image/png,image/jpeg,image/jpg" />
+							</a>
+						</div>
+					</div>
+					<div class="nav-text">
+						<span nav-text="考试中心"></span>
+						<input type="text" value="考试中心" maxlength="4" />
+					</div>
+				</li>
+				<li menu-type="message">
+					<div class="img-wrap">
+						<img src="/imgs/adminHtml/message.png" />
+						<div class="upload-img-box">
+							<a href="javascript:;" class="file">
+								<input type="file" class="fileClip" id="file-04" accept="image/png,image/jpeg,image/jpg" />
+							</a>
+						</div>
+					</div>
+					<div class="nav-text">
+						<span nav-text="消息中心"></span>
+						<input type="text" value="消息中心" maxlength="4" />
+					</div>
+				</li>
+				<li menu-type="question">
+					<div class="img-wrap">
+						<img src="/imgs/adminHtml/question.png" />
+						<div class="upload-img-box">
+							<a href="javascript:;" class="file">
+								<input type="file" class="fileClip" id="file-05" accept="image/png,image/jpeg,image/jpg" />
+							</a>
+						</div>
+					</div>
+					<div class="nav-text">
+						<span nav-text="问答天地"></span>
+						<input type="text" value="问答天地" maxlength="4" />
+					</div>
+				</li>
+				<li menu-type="shop">
+					<div class="img-wrap">
+						<img src="/imgs/adminHtml/shop.png" />
+						<div class="upload-img-box">
+							<a href="javascript:;" class="file">
+								<input type="file" class="fileClip" id="file-06" accept="image/png,image/jpeg,image/jpg" />
+							</a>
+						</div>
+					</div>
+					<div class="nav-text">
+						<span nav-text="积分商城"></span>
+						<input type="text" value="积分商城" maxlength="4" />
+					</div>
+				</li>
+				<li menu-type="research">
+					<div class="img-wrap">
+						<img src="/imgs/adminHtml/diaoyan.png" />
+						<div class="upload-img-box">
+							<a href="javascript:;" class="file">
+								<input type="file" class="fileClip" id="file-07" accept="image/png,image/jpeg,image/jpg" />
+							</a>
+						</div>
+					</div>
+					<div class="nav-text">
+						<span nav-text="调研评估"></span>
+						<input type="text" value="调研评估" maxlength="4" />
+					</div>
+				</li>
+				<li menu-type="liveStream">
+					<div class="img-wrap">
+						<img src="/imgs/adminHtml/zhibo.png" />
+						<div class="upload-img-box">
+							<a href="javascript:;" class="file">
+								<input type="file" class="fileClip" id="file-08" accept="image/png,image/jpeg,image/jpg" />
+							</a>
+						</div>
+					</div>
+					<div class="nav-text">
+						<span nav-text="直播中心"></span>
+						<input type="text" value="直播中心" maxlength="4" />
+					</div>
+				</li>
+			</ul>
+
+			<div class="clip-box" id="clip-box" file-id="">
+				<div class="clip-view" id="clipView"></div>
+				<div class="preview-clip-box">
+					<div class="preview-clip" id="previewBox"></div>
+					<button class="btn btn-success" id="clipBtn">剪裁</button>
+					<button class="btn btn-info" id="cancleClip">取消</button>
+					<button class="btn btn-info" id="finishClip">完成</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="preview-modal">
+			<div class="preview-contaner">
+				<!--标题-->
+				<div class="title-box">
+					<div class="back"></div>
+					<div class="title-text"></div>
+				</div>
+
+				<!--主体内容区-->
+				<div class="preview-contaner2">
+					<div class="preview-box" id="preview-box">
+						<div id="scroller">
+
+							<!--banner-->
+							<div class="banner-box">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="img-box" style="background-image: url(http://img.tuku.cn/file_big/201504/772d5eb2a5ce45b59fa4998c41e51c99.jpg);"></div>
+									</div>
+								</div>
+
+								<!--搜索-->
+								<div class="search-box">
+									<div class="img-box2">
+										<img src="/imgs/adminHtml/homenav_ic_search_nor.png" />
+									</div>
+								</div>
+
+								<!--遮挡框-->
+								<div class="edit-box"></div>
+
+							</div>
+
+							<!--目录导航-->
+							<ul class="index-menu" id="index-menu">
+
+							</ul>
+
+							<!--专题推荐-->
+							<div class="special-box">
+								<div class="module-title-box">
+									<span class="title-text">特色专题</span>
+									<span class="get-more">更多></span>
+								</div>
+								<div class="module-box">
+									<!--推荐区 -->
+									<div class="one-special">
+										<div class="img-box" style="background-image: url(http://img.tuku.cn/file_big/201504/772d5eb2a5ce45b59fa4998c41e51c99.jpg);"></div>
+										<div class="special-name-box">
+											<span class="special-name">哈佛大学公开课 : 幸福的智承诺的基础你觉得呢超级大检查你多久慧合集</span>
+										</div>
+									</div>
+									<div class="one-special">
+										<div class="img-box" style="background-image: url(http://userimage8.360doc.com/16/1102/16/2630460_201611021659580837159058.jpg);"></div>
+										<div class="special-name-box">
+											<span class="special-name">哈佛大学公开课 : 幸福的智慧合集</span>
+										</div>
+									</div>
+								</div>
+
+								<!--遮挡框-->
+								<div class="edit-box"></div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!--底部导航-->
+				<div class="bottom-nav-box">
+					<div class="nav-node">
+						<div class="img-wrap">
+							<img src="/imgs/adminHtml/footer01.png" />
+						</div>
+						<div class="nav-text select">
+							<span>首页</span>
+						</div>
+					</div>
+					<div class="nav-node">
+						<div class="img-wrap">
+							<img src="/imgs/adminHtml/footer2.png" />
+						</div>
+						<div class="nav-text">
+							<span>学习</span>
+						</div>
+					</div>
+					<div class="nav-node">
+						<div class="img-wrap">
+							<img src="/imgs/adminHtml/footer3.png" />
+						</div>
+						<div class="nav-text">
+							<span>问答</span>
+						</div>
+					</div>
+					<div class="nav-node">
+						<div class="img-wrap">
+							<img src="/imgs/adminHtml/footer4.png" />
+						</div>
+						<div class="nav-text">
+							<span>我的</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="btn-box-footer">
+			<button class="btn btn-info" id="preview-edit" data-toggle="modal" data-target="#preview-modal">预览</button>
+			<button class="btn btn-success" id="saveAndSubmit">保存并发布</button>
+		</div>
+
+		<script src="/js/public/jquery-1.12.4.js"></script>
+		<script src="/js/public/bootstrap.min.js"></script>
+		<script src="/js/public/Sortable.min.js"></script>
+		<script src="/js/public/iscroll-zoom.js" </script>
+		<script src="/js/public/hammer.js" ></script>
+		<script src="/js/public/jquery.photoClip.js"></script>
+		<script src="/js/adminHtml/menuEdit.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>李成龙的一些作品</title>
+    <link type="text/css" href="/stylesheets/works.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var n = $("#show li").length;//图片数量
+            var c = 1;//当前显示的图片位置
+            //初始化图片展示区
+            var show_ul = $("#show");
+            var show_li_left,show_li_now,show_li_right;
+            if(n>0) {
+                $("#show li:gt(2)").addClass("yingcang_right");
+                show_li_left = $("#show li:eq(0)").addClass("leftImg");
+                show_li_now = $("#show li:eq(1)").addClass("centerImg")
+                show_li_right = $("#show li:eq(2)").addClass("rightImg");
+                if(n>3){
+                	$("#show li:eq("+(n-1)+")").removeClass().addClass("yingcang_left");
+                }
+            }else{
+                $("#imgSlide").css("display","none");
+            }
+            $("#show li").each(function(){
+                $(this).click(function(e){
+                    if(!$(this).is(":animated")){
+                        var className = $(this).attr("class");
+                        if(className=="rightImg"){//右侧图片单击事件
+                            e.preventDefault();
+                            show_li_left.removeClass().addClass("yingcang_left");
+                            show_li_now.removeClass().addClass("leftImg");
+                            show_li_right.removeClass().addClass("centerImg");
+                            var show_li_right_lai = $("#show li:eq("+(c+2)+")").removeClass().addClass("rightImg");
+                            show_li_left=show_li_now;
+                            show_li_now=show_li_right;
+                            show_li_right=show_li_right_lai;
+                            if(c==n-3){
+                                c=-2
+                            }else{
+                                c=c+1;
+                            }
+                            $("#show li:eq("+(c+2)+")").removeClass().addClass("yingcang_right");
+                        }else if(className=="leftImg"){//左侧图片单击事件
+                            e.preventDefault();
+                            show_li_left.removeClass().addClass("centerImg");
+                            show_li_now.removeClass().addClass("rightImg");
+                            show_li_right.removeClass().addClass("yingcang_right");
+                            var show_li_left_lai;
+                            if(c>1){
+                                show_li_left_lai = $("#show li:eq("+(c-2)+")").removeClass().addClass("leftImg");
+                            }else{
+                                show_li_left_lai = $("#show li:eq("+(n+c-2)+")").removeClass().addClass("leftImg");
+                            }
+                            show_li_right=show_li_now;
+                            show_li_now=show_li_left;
+                            show_li_left=show_li_left_lai;
+                            if(c==-2){
+                                c=n-3;
+                            }else{
+                                c=c-1;
+                            }
+                            if(c>1){
+                                $("#show li:eq("+(c-2)+")").removeClass().addClass("yingcang_left");
+                            }else{
+                                show_li_left_lai = $("#show li:eq("+(n+c-2)+")").removeClass().addClass("yingcang_left");
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="imgSlide">
+    <div id="contain">
+        <ul id="show">
+        	<li><a href="/livevideo/pcvideo" target="_blank"><img src="/imgs/work/pclive.jpg"></a></li>
+            <li><a href="/suning" target="_blank"><img src="/imgs/work/suning_index3.jpg"></a></li>
+            <li><a href="/livevideo/mvideo" target="_blank"><img src="/imgs/work/mlive.jpg"></a></li>
+            <li><a href="/addQuestionnaire" target="_blank"><img src="/imgs/work/addQuestionnaire.png"></a></li>
+            <li><a href="/appIndexAdmin" target="_blank"><img src="/imgs/work/appIndexAdmin.jpg"></a></li>
+            <li><a href="/checkCreateTableForm" target="_blank"><img src="/imgs/work/checkCreateTableForm.jpg"></a></li>
+            <li><a href="/menuEdit" target="_blank"><img src="/imgs/work/menuEdit.jpg"></a></li>
+            <li><a href="/researchStatistics" target="_blank"><img src="/imgs/work/researchStatistics.png"></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

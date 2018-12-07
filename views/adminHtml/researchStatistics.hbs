@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>调研统计</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/public/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/public/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/adminHtml/researchStatistics.css" />
+	</head>
+
+	<body>
+		<div class="main-container" id="statixticsBox">
+			<button class="btn btn-primary export" id="export">导出</button>
+			<div class="modal fade" id="img-modal">
+				<div class="modal-img">
+					<img src="" />
+				</div>
+			</div>
+		
+		</div>
+		
+		<div id="clone-box" class="yingcang">
+			<!--选择题-->
+			<div class="one-question select-type" title-id="">
+				<div class="ques-title-box">
+					<span class="question-number"></span>
+					<span class="question-name"></span>
+					<span class="ques-type"></span>
+				</div>
+				<div class="img-wrap title-img-box">
+					<img src="" />
+				</div>
+				<div class="row hit-title item-head">
+					<div class="col-xs-6">选项</div>
+					<div class="col-xs-1 border-left-fff">小计</div>
+					<div class="col-xs-5 border-left-fff">比例</div>
+				</div>
+				<div class="option-list">
+					<!--选项在这里插入-->
+				</div>
+				<div class="row hit-title">
+					<div class="col-xs-6">本题有效填写人次</div>
+					<div class="col-xs-1 border-left-fff all-statistics-number"></div>
+					<div class="col-xs-5 border-left-fff">
+						<button class="btn btn-info pie-chart-btn" show-state="0">饼状图</button>
+					</div>
+				</div>
+				<div class="pie-Chart"></div>
+			</div>
+			
+			<!--问答题-->
+			<div class="one-question essay-type" title-id="">
+				<div class="ques-title-box">
+					<span class="question-number"></span>
+					<span class="question-name"></span>
+					<span class="ques-type">[问答题]</span>
+				</div>
+				<div class="img-wrap title-img-box">
+					<img src="" />
+				</div>
+				<span class="get-more">查看详细答案</span>
+				<!--<div class="modal fade">
+					<div class="more-answers">
+						
+					</div>
+				</div>-->
+			</div>
+			
+			
+			<!--选项克隆体-->
+			<div class="row data-item select-option-item" option-id="">
+				<div class="col-xs-1 text-center option-display"></div>
+				<div class="col-xs-5">
+					<div class="option-text"></div>
+					<div class="img-wrap option-img-box">
+						<img src="" />
+					</div>
+				</div>
+				<div class="col-xs-1 text-center option-answer-number"></div>
+				<div class="col-xs-5 text-center">
+					<div class="prcess-box">
+						<div class="precess-show" style="width: 0px;"></div>
+					</div>
+					<span class="precess-text"></span>
+				</div>
+			</div>
+			
+			
+		</div>
+
+		<script src="/js/public/jquery-1.12.4.js"></script>
+		<script src="/js/public/bootstrap.min.js"></script>
+		<script src="/js/public/echarts.min.js"></script>
+		<script src="/js/adminHtml/researchStatistics.js"></script>
+	</body>
+
+</html>

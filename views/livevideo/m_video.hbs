@@ -1,0 +1,145 @@
+{{!< html_struct}}
+{{#contentFor "title"}}手机直播{{/contentFor}}
+{{#contentFor "pageStyles"}}
+    <link href="/stylesheets/swiper-3.3.1.min.css" rel="stylesheet">
+    <link href="/stylesheets/livevideo/video.css" rel="stylesheet">
+{{/contentFor}}
+<div class="video_container">
+    <div class="video_body">
+        <video id="myVideo" poster="http://download.pchome.net/wallpaper/pic-4012-2-600x1024.jpg"
+               src="http://file.yihunqing.net/file/juximao_hlr/b8ce52d52293e0f6789e6557d60301abbdd3f1b6.mp4" >
+        </video>
+        <div id="play" style="display: none">播放</div>
+        <div id="barrageContent">
+            <!--弹幕内容-->
+        </div>
+        <div id="getMoreGifts">
+            <!--多个礼物展示区域-->
+        </div>
+        <div id="getGifts">
+            <!--收到的礼物-->
+            <div class="giftsWrap">
+                <div class="gifts" id="gifts"></div>
+            </div>
+        </div>
+        <div id="tools">
+            <!--工具-->
+            <div id="showSengMsg">评论</div>
+
+            <div id="exit">退出</div>
+            <div id="sendGift">送礼</div>
+        </div>
+        <div id="sendMsg">
+            <!--发送消息-->
+            <button id="barrageOpen">开弹幕</button>
+            <button id="barrageClose">关弹幕</button>
+            <input id="msgValue" type="text" placeholder="输入你想说的"/>
+            <button id="sendBarrage">发送</button>
+        </div>
+        <div id="sendGiftContainer">
+            <!--送礼物区域-->
+            <div id="giftsContent">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="oneGift">
+                                <span class="giftName">苹果</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">香蕉</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">黄瓜</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">橘子</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">西瓜</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">樱花</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">玫瑰</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">锤子</span>
+                                <span class="number"></span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="oneGift">
+                                <span class="giftName">山楂</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">水牛</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">山羊</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">核桃</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">兰花</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">百合花</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">青草</span>
+                                <span class="number"></span>
+                            </div>
+                            <div class="oneGift">
+                                <span class="giftName">白开水</span>
+                                <span class="number"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div id="actionContent">
+                <div class="giftGo giftcannotGo">发送</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cloneContainer">
+    <!--弹幕子内容框架-->
+    <div class="oneBarrage"></div>
+
+    <!--礼物内容-->
+    <div class="oneGift">
+        <span class="username"></span>：
+        <span class="gift"></span>
+    </div>
+
+    <!--多个礼物展示内容-->
+    <div class="oneTypeGifts">
+        <span class="username"></span>：
+        <span class="gifttype"></span>
+        <span class="giftcount"></span>
+    </div>
+</div>
+
+{{#contentFor "pageScripts"}}
+    <script type="text/javascript" src="/js/swiper-3.3.1.jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/liveVideo/video.js"></script>
+{{/contentFor}}

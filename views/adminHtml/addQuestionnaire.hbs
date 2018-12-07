@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加问卷</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/public/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/public/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/adminHtml/addQuestionnaire.css" />
+	</head>
+
+	<body>
+		<div class="main-container">
+			<!--题目区-->
+			<div class="add-ques-container">
+				<div class="ques-type--box">
+					<div class="title"><span>题型选择</span></div>
+					<ul>
+						<li class="single-choice"><span>单选题</span></li>
+						<li class="multiple-choice"><span>多选题</span></li>
+						<li class="essay"><span>问答题</span></li>
+					</ul>
+				</div>
+				<div class="ques-type--box2">
+					&nbsp;
+				</div>
+				<div class="ques-box">
+					<div class="title"><span id="ques-title01"></span></div>
+					<div class="questionnaires" id="questionnaires">
+						
+					</div>
+				</div>
+			</div>
+
+			<!--页面按钮区-->
+			<div class="page-action-btn-box">
+				<a class="btn btn-success" id="preview-ques" data-toggle="modal" data-target="#preview-modal">预览</a>
+				<a class="btn btn-info" id="save-ques">保存</a>
+				<a class="btn btn-default">上一步</a>
+				<a class="btn btn-primary">下一步</a>
+			</div>
+
+			<!--预览区-->
+			<div class="modal fade" id="preview-modal">
+				<div class="preview-contaner">
+					<!--标题-->
+					<div class="question-title-box">
+						<div class="back"></div>
+						<div class="title-text" id="ques-title02"></div>
+					</div>
+					<div class="preview-contaner2">
+						<div class="preview-box" id="preview-box">
+
+						</div>
+						<div class="submit-ques">提交答卷</dvi>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!--题目主体克隆区-->
+			<div id="ques-clone" class="yingcang">
+				<!--单选题-->
+				<div class="one-ques single-choice-type copy-animate" ques-type="single">
+					<div class="ques-body">
+						<!--题目成型区-->
+						<div class="ques-title">
+							<span class="ques-type">[单选题]</span>
+							<span class="ques-number">Q1</span>
+							<span class="title-text">请在此输入标题</span>
+							<!--<div class="quesTitle-img-wrap">
+							<img src="/imgs/adminHtml/demo/01.jpg" />
+						</div>-->
+						</div>
+						<ul class="ques-options">
+							<li>
+								<input type="radio" name="" value="选项1" /><span>选项1</span>
+								<!--<div class="option-img-wrap"><img src="/imgs/adminHtml/demo/02.jpg" /></div>-->
+							</li>
+							<li>
+								<input type="radio" name="" value="选项2" /><span>选项2</span>
+								<!--<div class="option-img-wrap"><img src="/imgs/adminHtml/demo/03.jpg" /></div>-->
+							</li>
+							<li>
+								<input type="radio" name="" value="选项3" /><span>选项3</span>
+								<!--<div class="option-img-wrap"><img src="/imgs/adminHtml/demo/04.jpeg" /></div>-->
+							</li>
+						</ul>
+						<div class="action-box">
+							<!--题目操作区-->
+							<span class="complete-ques">完成</span>
+							<span class="edit-ques yingcang">编辑</span>
+							<span class="copy-ques">复制</span>
+							<span class="remove-ques">删除</span>
+							<span class="up-ques">上移</span>
+							<span class="down-ques">下移</span>
+							<span class="first-ques">最前</span>
+							<span class="last-ques">最后</span>
+						</div>
+					</div>
+					<div class="ques-edit-body">
+						<!--题目编辑区-->
+						<div class="ques-title-edit">
+							<div class="title-hit">
+								<div class="hit">标题</div>
+							</div>
+							<textarea class="title-edit" maxlength="200" placeholder="标题-200字以内"></textarea>
+							<div class="img-wrap-box">
+								<div class="upload-img-wrap quesTitle-img-edit">
+									<img src="/imgs/adminHtml/add-img3.png" />
+									<input type="file" class="upload-img-file"  />
+								</div>
+								<span class="remove-img remove-title-img"></span>
+							</div>
+						</div>
+						<div class="ques-options-edit">
+							<div class="title-hit">
+								<div class="hit">选项文字</div>
+								<div class="img-hit">图片</div>
+								<div class="action-hit">操作</div>
+							</div>
+							<ul class="options-items">
+								<li>
+									<div class="option-text-edit">
+										<textarea class="option-edit-textarea" maxlength="100" placeholder="100字以内">选项1</textarea>
+									</div>
+									<div class="option-img-edit">
+										<div class="img-wrap-box2">
+											<div class="upload-img-wrap">
+												<img src="/imgs/adminHtml/add-img3.png" />
+												<input type="file" class="option-upload-img-file" />
+											</div>
+											<span class="remove-img remove-option-img"></span>
+										</div>
+									</div>
+									<div class="option-actions">
+										<span class="add-option"></span>
+										<span class="remove-option"></span>
+										<span class="up-option"></span>
+										<span class="down-option"></span>
+									</div>
+								</li>
+								<li>
+									<div class="option-text-edit">
+										<textarea class="option-edit-textarea" maxlength="100" placeholder="100字以内">选项2</textarea>
+									</div>
+									<div class="option-img-edit">
+										<div class="img-wrap-box2">
+											<div class="upload-img-wrap">
+												<img src="/imgs/adminHtml/add-img3.png" />
+												<input type="file" class="option-upload-img-file" />
+											</div>
+											<span class="remove-img remove-option-img"></span>
+										</div>
+									</div>
+									<div class="option-actions">
+										<span class="add-option"></span>
+										<span class="remove-option"></span>
+										<span class="up-option"></span>
+										<span class="down-option"></span>
+									</div>
+								</li>
+								<li>
+									<div class="option-text-edit">
+										<textarea class="option-edit-textarea" maxlength="100" placeholder="100字以内">选项3</textarea>
+									</div>
+									<div class="option-img-edit">
+										<div class="img-wrap-box2">
+											<div class="upload-img-wrap">
+												<img src="/imgs/adminHtml/add-img3.png" />
+												<input type="file" class="option-upload-img-file" />
+											</div>
+											<span class="remove-img remove-option-img"></span>
+										</div>
+									</div>
+									<div class="option-actions">
+										<span class="add-option"></span>
+										<span class="remove-option"></span>
+										<span class="up-option"></span>
+										<span class="down-option"></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!--多选题-->
+				<div class="one-ques multiple-choice-type copy-animate" ques-type="multiple">
+					<div class="ques-body">
+						<!--题目成型区-->
+						<div class="ques-title">
+							<span class="ques-type">[多选题]</span>
+							<span class="ques-number">Q1</span>
+							<span class="title-text">请在此输入标题</span>
+							<!--<div class="quesTitle-img-wrap">
+							<img src="/imgs/adminHtml/demo/01.jpg" />
+						</div>-->
+						</div>
+						<ul class="ques-options">
+							<li>
+								<input type="checkbox" name="" value="选项1" /><span>选项1</span>
+								<!--<div class="option-img-wrap"><img src="/imgs/adminHtml/demo/02.jpg" /></div>-->
+							</li>
+							<li>
+								<input type="checkbox" name="" value="选项2" /><span>选项2</span>
+								<!--<div class="option-img-wrap"><img src="/imgs/adminHtml/demo/03.jpg" /></div>-->
+							</li>
+							<li>
+								<input type="checkbox" name="" value="选项3" /><span>选项3</span>
+								<!--<div class="option-img-wrap"><img src="/imgs/adminHtml/demo/04.jpeg" /></div>-->
+							</li>
+						</ul>
+
+						<div class="action-box">
+							<!--题目操作区-->
+							<span class="complete-ques">完成</span>
+							<span class="edit-ques yingcang">编辑</span>
+							<span class="copy-ques">复制</span>
+							<span class="remove-ques">删除</span>
+							<span class="up-ques">上移</span>
+							<span class="down-ques">下移</span>
+							<span class="first-ques">最前</span>
+							<span class="last-ques">最后</span>
+						</div>
+					</div>
+					<div class="ques-edit-body">
+						<!--题目编辑区-->
+						<div class="ques-title-edit">
+							<div class="title-hit">
+								<div class="hit">标题</div>
+							</div>
+							<textarea class="title-edit" maxlength="200" placeholder="标题-200字以内"></textarea>
+							<div class="img-wrap-box">
+								<div class="upload-img-wrap quesTitle-img-edit">
+									<img src="/imgs/adminHtml/add-img3.png" />
+									<input type="file" class="upload-img-file"  />
+								</div>
+								<span class="remove-img remove-title-img"></span>
+							</div>
+						</div>
+						<div class="ques-options-edit">
+							<div class="title-hit">
+								<div class="hit">选项文字</div>
+								<div class="img-hit">图片</div>
+								<div class="action-hit">操作</div>
+							</div>
+							<ul class="options-items">
+								<li>
+									<div class="option-text-edit">
+										<textarea class="option-edit-textarea" maxlength="100" placeholder="100字以内">选项1</textarea>
+									</div>
+									<div class="option-img-edit">
+										<div class="img-wrap-box2">
+											<div class="upload-img-wrap">
+												<img src="/imgs/adminHtml/add-img3.png" />
+												<input type="file" class="option-upload-img-file" />
+											</div>
+											<span class="remove-img remove-option-img"></span>
+										</div>
+									</div>
+									<div class="option-actions">
+										<span class="add-option"></span>
+										<span class="remove-option"></span>
+										<span class="up-option"></span>
+										<span class="down-option"></span>
+									</div>
+								</li>
+								<li>
+									<div class="option-text-edit">
+										<textarea class="option-edit-textarea" maxlength="100" placeholder="100字以内">选项2</textarea>
+									</div>
+									<div class="option-img-edit">
+										<div class="img-wrap-box2">
+											<div class="upload-img-wrap">
+												<img src="/imgs/adminHtml/add-img3.png" />
+												<input type="file" class="option-upload-img-file" />
+											</div>
+											<span class="remove-img remove-option-img"></span>
+										</div>
+									</div>
+									<div class="option-actions">
+										<span class="add-option"></span>
+										<span class="remove-option"></span>
+										<span class="up-option"></span>
+										<span class="down-option"></span>
+									</div>
+								</li>
+								<li>
+									<div class="option-text-edit">
+										<textarea class="option-edit-textarea" maxlength="100" placeholder="100字以内">选项3</textarea>
+									</div>
+									<div class="option-img-edit">
+										<div class="img-wrap-box2">
+											<div class="upload-img-wrap">
+												<img src="/imgs/adminHtml/add-img3.png" />
+												<input type="file" class="option-upload-img-file" />
+											</div>
+											<span class="remove-img remove-option-img"></span>
+										</div>
+									</div>
+									<div class="option-actions">
+										<span class="add-option"></span>
+										<span class="remove-option"></span>
+										<span class="up-option"></span>
+										<span class="down-option"></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!--问答题-->
+				<div class="one-ques essay-type copy-animate" ques-type="essay">
+					<div class="ques-body">
+						<!--题目成型区-->
+						<div class="ques-title">
+							<span class="ques-type">[问答题]</span>
+							<span class="ques-number">Q1</span>
+							<span class="title-text">请在此输入标题</span>
+							<!--<div class="quesTitle-img-wrap">
+							<img src="/imgs/adminHtml/demo/01.jpg" />
+						</div>-->
+						</div>
+						<div class="action-box">
+							<!--题目操作区-->
+							<span class="complete-ques">完成</span>
+							<span class="edit-ques yingcang">编辑</span>
+							<span class="copy-ques">复制</span>
+							<span class="remove-ques">删除</span>
+							<span class="up-ques">上移</span>
+							<span class="down-ques">下移</span>
+							<span class="first-ques">最前</span>
+							<span class="last-ques">最后</span>
+						</div>
+					</div>
+					<div class="ques-edit-body">
+						<!--题目编辑区-->
+						<div class="ques-title-edit">
+							<div class="title-hit">
+								<div class="hit">标题</div>
+							</div>
+							<textarea class="title-edit" maxlength="200" placeholder="标题-200字以内"></textarea>
+							<div class="img-wrap-box">
+								<div class="upload-img-wrap quesTitle-img-edit">
+									<img src="/imgs/adminHtml/add-img3.png" />
+									<input type="file" class="upload-img-file"  />
+								</div>
+								<span class="remove-img remove-title-img"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--预览单选题-->
+				<div class="one-preview-ques p-single-choice-type">
+					<div class="p-ques-tile-box">
+						<span class="p-ques-type">[单选题]</span>
+						<span class="p-ques-number">Q1:</span>
+						<span class="p-ques-title"></span>
+						<div class="p-title-img">
+							<img src="" />
+						</div>
+					</div>
+					<div class="p-ques-options">
+						<ul>
+
+						</ul>
+					</div>
+				</div>
+
+				<!--预览多选-->
+				<div class="one-preview-ques p-multiple-choice-type">
+					<div class="p-ques-tile-box">
+						<span class="p-ques-type">[多选题]</span>
+						<span class="p-ques-number">Q2:</span>
+						<span class="p-ques-title"></span>
+						<div class="p-title-img">
+							<img src="" />
+						</div>
+					</div>
+					<div class="p-ques-options">
+						<ul>
+
+						</ul>
+					</div>
+				</div>
+
+				<!--预览 - 问答-->
+				<div class="one-preview-ques p-essay-choice-type">
+					<div class="p-ques-tile-box">
+						<span class="p-ques-type">[问答题]</span>
+						<span class="p-ques-number">Q3:</span>
+						<span class="p-ques-title"></span>
+						<div class="p-title-img">
+							<img src="" />
+						</div>
+					</div>
+					<div class="p-ques-options">
+						<textarea maxlength="500" placeholder="请输入"></textarea>
+					</div>
+				</div>
+
+			</div>
+
+			<!--局部克隆区-->
+			<div id="items-clone" class="yingcang">
+				<!--题目图片-->
+				<div class="quesTitle-img-wrap">
+					<img src="" />
+				</div>
+
+				<!--选项图片-->
+				<div class="option-img-wrap"><img src="" /></div>
+
+				<!--单选选项-->
+				<li class="single-type-option">
+					<input type="radio" name="" value="" /><span>新选项</span>
+				</li>
+
+				<!--多选选项-->
+				<li class="multiple-type-option">
+					<input type="checkbox" name="" value="" /><span>新选项</span>
+				</li>
+
+				<!--选项 - 编辑-->
+				<li class="select-option-edit">
+					<div class="option-text-edit">
+						<textarea class="option-edit-textarea" maxlength="100" placeholder="100字以内">新选项</textarea>
+					</div>
+					<div class="option-img-edit">
+						<div class="img-wrap-box2">
+							<div class="upload-img-wrap">
+								<img src="/imgs/adminHtml/add-img3.png" />
+								<input type="file" class="option-upload-img-file" />
+							</div>
+							<span class="remove-img remove-option-img"></span>
+						</div>
+					</div>
+					<div class="option-actions">
+						<span class="add-option"></span>
+						<span class="remove-option"></span>
+						<span class="up-option"></span>
+						<span class="down-option"></span>
+					</div>
+				</li>
+
+				<!--预览 -单选选项-->
+				<li class="p-single-option">
+					<input type="radio" name="" /><span></span>
+					<div class="p-option-img-wrap"><img src="" /></div>
+				</li>
+
+				<!--预览 - 多选选项-->
+				<li class="p-multiple-option">
+					<input type="checkbox" name="" value="选项1" /><span>选项1常年第三次那是你参加考试的内存就看到你时刻才能到数据库内存就打开奶茶店</span>
+					<div class="p-option-img-wrap"><img src="/imgs/adminHtml/demo/02.jpg" /></div>
+				</li>
+
+			</div>
+
+			<script src="/js/public/jquery-1.12.4.js"></script>
+			<script src="/js/public/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="/js/adminHtml/addQuestionnaire.js"></script>
+	</body>
+
+</html>
